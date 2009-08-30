@@ -58,7 +58,7 @@ var GitHubList = {
         // If it's a PushEvent, AND we haven't seen it before, add it to the list
         commitIndex += 1;
         var date = new Date(Date.parse(commit.created_at));
-        var codeItem = $('<div class="commit"><a class="repository" href="' + commit.repository.url + '"><span>' + commit.repository.name + '</span></a><div class="date">' + (date.getMonth() + '/' + date.getDate() + '/' + date.getFullYear()) + '</div><div class="message" title="' + commit.payload.shas[0][2] + '">' + commit.payload.shas[0][2] + '</div></div>');
+        var codeItem = $('<div class="commit"><a class="repository" href="' + commit.repository.url + '"><span>' + commit.repository.name + '</span></a><div class="date">' + (date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear()) + '</div><div class="message" title="' + commit.payload.shas[0][2] + '">' + commit.payload.shas[0][2] + '</div></div>');
         codeItem.hide();//({opacity: 0});
         code.prepend(codeItem);
         codeItem.fadeIn(fadeLength, function() {
