@@ -1,3 +1,4 @@
+var pageTracker;
 $(function() {
   var arrow = $('#arrow');
   $('#menu a').mousedown(function() {
@@ -15,7 +16,9 @@ $(function() {
       $('#' + active.attr('href').split('#').pop()).fadeOut();
       link.addClass('active');
       $('#' + id).animate({opacity: 1.0}).fadeIn({queue: true});
-      pageTracker._link(this.href);
+      try {
+        pageTracker._trackPageview(this.href);
+      } catch (e) {}
     };
     if (id == 'code' && !GitHubList.initialized)  {
       GitHubList.pull();
@@ -32,7 +35,11 @@ $(function() {
   var googleTalk = $('a.google-talk');
   googleTalk.attr('href', 'gtalk:f' + 'l' + 'i' + 'p' + '@' + 'x' + four.toString() + five.toString() + one.toString() + '.' + 'c' + 'om');
   $('.email.value').html([['fl' + 'i' + 'p', [['24', '0', 'blu', 'e'].join(''), 'c' + 'om'].join('.')].join('@'), googleTalk.attr('href').replace('gtalk:', '')].join('<br />'));
-  $('a.vcard').attr('href', ['Fl' + 'i' + 'p' + 'S' + 'ass' + 'e' + 'r' , 'cf'].join('.v'));
+  var vcard = $('a.vcard')
+  vcard.attr('href', ['Fl' + 'i' + 'p' + 'S' + 'ass' + 'e' + 'r' , 'cf'].join('.v'));
+  vcard.click(function() {
+    pageTracker._trackPageview(this.href);
+  });
   // After all of our listeners are added, click on the active item
   $('#menu a.active').click();
 });
