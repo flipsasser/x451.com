@@ -163,6 +163,7 @@ body {
 
 #code .commit .repository:hover span {
   background-color:#aaa;
+  -mozilla-border-radius:10px;
   -webkit-border-radius:10px;
 }
 

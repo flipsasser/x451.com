@@ -15,6 +15,7 @@ $(function() {
       $('#' + active.attr('href').split('#').pop()).fadeOut();
       link.addClass('active');
       $('#' + id).animate({opacity: 1.0}).fadeIn({queue: true});
+      pageTracker._link(this.href);
     };
     if (id == 'code' && !GitHubList.initialized)  {
       GitHubList.pull();
