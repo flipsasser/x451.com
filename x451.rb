@@ -3,7 +3,15 @@ require 'sinatra'
 require 'erb'
 
 get '/' do
-  erb :index, :locals => {:section => 'about'}
+  erb :index, :locals => {:section => case request.cookies['active']
+    when 'contact'
+      'contact'
+    when 'code'
+      'code'
+    else
+      'about'
+    end
+  }
 end
 
 get '/contact' do
