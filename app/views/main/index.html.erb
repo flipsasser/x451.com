@@ -1,0 +1,35 @@
+      <div id="about"<%= ' style="display:none;"' unless cookies[:active] == 'about' %>>
+        <p><b>Hi there!</b> My name is Flip Sasser. I’m a programmer and sometimes-designer living in Baltimore, MD.</p>
+        <p>I build applications using Ruby, jQuery, Objective-C, and Cappuccino. It's  basically the most fun ever.</p>
+        <p>I also have a brown dog: <a href="#riley-dog" id="riley"></a></p>
+        <div id="riley-dog" style="display:none;">
+          <img alt="Riley the dog!" height="200" src="/images/riley-and-me.jpg" width="200" />
+          <p>We have a lot in common.</p>
+        </div>
+      </div>
+      <div id="contact"<%= ' style="display:none;"' unless cookies[:active] == 'contact' %>>
+        <div class="column">
+          <p>
+            <span class="label">E-mail</span>
+            <span class="email value">#nospamkthxbai#</span>
+            <span class="label">Phone</span>
+            <span class="phone value">(410) 929-2701</span>
+            <span class="label">Address</span>
+            <span class="address value">P.O. Box 211<br />Riderwood, MD</span>
+            <%= link_to('Download my vCard', '#', :class => 'vcard')%>
+          </p>
+        </div>
+        <div class="column right">
+          <p>
+            <%= link_to('Github', 'http://github.com/flipsasser', :class => 'github') %>
+            <%= link_to('Facebook', 'http://www.facebook.com/flipsasser', :class => 'facebook') %>
+            <%= link_to('Google Talk', '#', :class => 'google-talk') %>
+            <%= link_to('LinkedIn', 'http://www.linkedin.com/in/flipsasser', :class => 'linked-in') %>
+            <%= link_to('Skype', 'skype://flipsasser?chat', :class => 'skype') %>
+            <%= link_to('Follow me on twitter', 'http://twitter.com/flipsasser', :class => 'twitter') %>
+          </p>
+        </div>
+      </div>
+      <div id="code"<%= ' style="display:none;"' unless cookies[:active] == 'code' %>>
+
+      </div>

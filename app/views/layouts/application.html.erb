@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <title><%= "#{@title} - " unless @title.blank? %>x451.com</title>
+  <%= stylesheet_link_tag('screen') %>
+  <%= javascript_include_tag('http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js') %>
+  <%# javascript_include_tag('http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.js') %>
+  <%= javascript_include_tag('application') %>
+</head>
+<body>
+  <div id="main">
+    <div id="header">
+      <a href="/" id="banner"><span class="text">Flip Sasser / Programmer @ 240blue</span></a>
+      <div id="arrow"></div>
+    </div>
+    <div id="content">
+      <ul id="menu">
+        <li><a <%= 'class="active" ' if (cookies[:active] ||= 'about') == 'about' %>href="#about" id="about-button"><span class="image"></span><span class="text">About</span></a></li>
+        <li><a <%= 'class="active" ' if cookies[:active] == 'contact' %>href="#contact" id="contact-button"><span class="image"></span><span class="text">Contact</span></a></li>
+        <li><a <%= 'class="active" ' if cookies[:active] == 'code' %>href="#code" id="code-button"><span class="image"></span><span class="text">Code</span></a></li>
+      </ul>
+<%= yield %>
+      <div id="footer">
+        Copyright &copy; <%= Date.today.year %> Flip Sasser. Network icons by <%= link_to('Paul Robert Lloyd', 'http://paulrobertlloyd.com') %>.
+      </div>
+    </div>
+  </div>
+  <div id="shadow"></div>
+</body>
+</html>

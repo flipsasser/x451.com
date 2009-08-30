@@ -1,0 +1,280 @@
+a {
+  color:#c5e5fd;
+  cursor:pointer;
+  text-decoration:none;
+}
+
+a:hover {
+  text-decoration:underline;
+}
+
+a span.text {
+  visibility:hidden;
+}
+
+body {
+  background:#022d4c url(/images/background-body.jpg) center 0 no-repeat;
+  font:10pt 'Helvetica Neue';
+  margin:0;
+  overflow:hidden;
+}
+
+#main {
+  margin:100px auto;
+  width:367px;
+}
+
+#header {
+  background:url(/images/background-header.png) no-repeat;
+  height:90px;
+  position:relative;
+}
+
+#banner {
+  background:url(/images/background-banner.png) 20px 20px no-repeat;
+  display:block;
+  height:52px;
+  padding:20px;
+  text-decoration:none;
+  width:225px;
+}
+
+#arrow {
+  background:url(/images/background-arrow.png) no-repeat;
+  height:25px;
+  left:55px;
+  position:absolute;
+  top:80px;
+  width:24px;
+  z-index:1;
+}
+
+#content {
+  background:url(/images/background-content.png) no-repeat;
+  height:318px;
+  position:relative;
+}
+
+#menu {
+  height:32px;
+  margin:0 0 20px 0;
+  padding:24px 10px 0 10px;
+}
+
+#menu li {
+  display:block;
+  float:left;
+  height:32px;
+  margin:0;
+  overflow:hidden;
+  padding:0;
+  width:33%;
+}
+
+#menu li a {
+  background:url(/images/background-buttons.png) center 0;
+  color:#fff;
+  display:block;
+  font:13pt bold 'Calibri', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height:32px;
+  margin:0 auto;
+  text-align:center;
+  text-decoration:none;
+  width:103px;
+}
+
+#menu li a span.image {
+  background-image:url(/images/background-text.png);
+  background-position:center 8px;
+  background-repeat:no-repeat;
+  display:block;
+  height:32px;
+}
+
+#menu li a#contact-button span.image {
+  background-position:center -58px;
+}
+
+#menu li a#code-button span.image {
+  background-position:center -24px;
+}
+
+#menu li a:hover {
+  background-position:center -64px;
+}
+
+#menu li a.active, #menu li a.active.down {
+  background-position:center -32px;
+}
+
+#menu li a.down {
+  background-position:center -96px;
+}
+
+#about {
+  font:12pt Garamond, Georgia, Times, serif;
+  line-height:1.4em;
+  padding:0 20px;
+}
+
+#riley {
+  background:url(/images/background-riley.png) no-repeat;
+  display:inline-block;
+  height:31px;
+  left:5px;
+  position:relative;
+  top:10px;
+  width:31px;
+}
+
+#contact {
+  background:url(/images/background-divider.png) center center no-repeat;
+  overflow:hidden;
+  padding:0 20px;
+}
+
+#code {
+  background:url(/images/background-code-loading.gif) center center no-repeat;
+  height:210px;
+  overflow:auto;
+}
+
+#code .commit {
+  background:url(/images/background-commit.png) repeat-x;
+  cursor:default;
+  height:40px;
+  overflow:hidden;
+  padding:0 10px;
+}
+
+#code .commit .repository {
+  color:#000;
+  display:block;
+  font:bold 13pt 'Calibri', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  float:left;
+  line-height:40px;
+  text-decoration:none;
+}
+
+#code .commit .repository span {
+  line-height:25px;
+  padding:0 5px;
+}
+
+#code .commit .repository:hover span {
+  background-color:#aaa;
+  -webkit-border-radius:10px;
+}
+
+#code .commit .date {
+  color:#888;
+  float:right;
+  line-height:42px;
+}
+
+#code .commit .message {
+  line-height:42px;
+  overflow:hidden;
+  padding-left:10px;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+#code code {
+  display:block;
+  margin-bottom:10px;
+  padding:0 10px;
+  white-space:pre;
+}
+
+#footer {
+  bottom:8px;
+  font:9pt bold 'Calibri', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  position:absolute;
+  text-align:center;
+  width:100%;
+}
+
+#shadow {
+  background:url(/images/background-shadow.png) no-repeat;
+  height:87px;
+  left:50%;
+  margin-left:-210px;
+  position:absolute;
+  top:530px;
+  width:419px;
+}
+
+#zoom p {
+  font-size:9pt;
+  font-weight:300;
+  text-align:center;
+}
+
+.column {
+  float:left;
+  width:158px;
+}
+
+.column.right {
+  float:right;
+}
+
+.column a {
+  background-image:url(/images/icons.png);
+  background-position:7px 6px;
+  background-repeat:no-repeat;
+  display:block;
+  font-size:9pt;
+  line-height:29px;
+  padding-left:30px;
+}
+
+.column a.github {
+  background-position:7px 6px;
+}
+
+.column a.facebook {
+  background-position:7px -23px;
+}
+
+.column a.google-talk {
+  background-position:7px -52px;
+}
+
+.column a.linked-in {
+  background-position:7px -81px;
+}
+
+.column a.skype {
+  background-position:7px -110px;
+}
+
+.column a.twitter {
+  background-position:7px -139px;
+}
+
+.column a.vcard {
+  background-position:7px -168px;
+}
+
+.label, .value {
+  display:block;
+  line-height:29px;
+}
+
+.label {
+  clear:left;
+  color:#444;
+  float:left;
+  font-size:9pt;
+  font-weight:200;
+  text-align:right;
+  text-transform:lowercase;
+  width:50px;
+}
+
+.value {
+  clear:right;
+  margin-left:60px;
+}
