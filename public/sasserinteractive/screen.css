@@ -1,0 +1,33 @@
+body {
+  background-color:#fff;
+  color:#000;
+  font:12pt 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow:hidden;
+}
+
+#main {
+  left:50%;
+  margin:-200px 0 0 -250px;
+  position:absolute;
+  text-align:left;
+  top:50%;
+  width:500px;
+}
+
+#content {
+  padding:50px 20px 0 20px;
+}
+
+#thanks {
+  display:block;
+  margin-bottom:50px;
+}
+
+#sticky {
+  float:right;
+}
+
+p {
+  line-height:1.3em;
+  width:300px;
+}

@@ -19,3 +19,7 @@ get '/' do
     end
   }
 end
+
+get '/sasserinteractive' do
+  erb :sasserinteractive
+end
