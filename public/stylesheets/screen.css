@@ -14,7 +14,7 @@ a span.text {
 
 body {
   background:#022d4c url(/images/background-body.jpg) center 0 no-repeat;
-  font:10pt 'Helvetica Neue';
+  font:12px 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin:0;
   overflow:hidden;
 }
@@ -28,6 +28,7 @@ body {
   background:url(/images/background-header.png) no-repeat;
   height:90px;
   position:relative;
+  z-index:2;
 }
 
 #banner {
@@ -46,13 +47,13 @@ body {
   position:absolute;
   top:80px;
   width:24px;
-  z-index:1;
 }
 
 #content {
   background:url(/images/background-content.png) no-repeat;
   height:318px;
   position:relative;
+  z-index:1;
 }
 
 #menu {
@@ -163,7 +164,7 @@ body {
 
 #code .commit .repository:hover span {
   background-color:#aaa;
-  -mozilla-border-radius:10px;
+  -moz-border-radius:10px;
   -webkit-border-radius:10px;
 }
 

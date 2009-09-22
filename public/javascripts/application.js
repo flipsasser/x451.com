@@ -13,11 +13,18 @@ $(function() {
     if (!link.hasClass('active')) {
       var active = $('#menu a.active');
       active.removeClass('active');
-      $('#' + active.attr('href').split('#').pop()).fadeOut();
+      var fadeOut = $('#' + active.attr('href').split('#').pop());
+      var fadeIn = $('#' + id);
+      if ($.browser.msie) {
+        fadeOut.hide();
+        fadeIn.show();
+      } else {
+        fadeOut.fadeOut();
+        fadeIn.animate({opacity: 1.0}).fadeIn({queue: true});
+      }
       link.addClass('active');
-      $('#' + id).animate({opacity: 1.0}).fadeIn({queue: true});
       try {
-        pageTracker._trackPageview(this.href);
+        pageTracker._trackPageview('#' + this.href.split('#').pop());
       } catch (e) {}
     };
     if (id == 'code' && !GitHubList.initialized)  {
@@ -71,9 +78,7 @@ var GitHubList = {
         var codeItem = $('<div class="commit"><a class="repository" href="' + commit.repository.url + '"><span>' + commit.repository.name + '</span></a><div class="date">' + (date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear()) + '</div><div class="message" title="' + commit.payload.shas[0][2] + '">' + commit.payload.shas[0][2] + '</div></div>');
         codeItem.hide();//({opacity: 0});
         code.prepend(codeItem);
-        codeItem.fadeIn(fadeLength, function() {
-          console.log('faded in');
-        });
+        codeItem.fadeIn(fadeLength);
         // var timeoutFunction = function() {
         //   console.log('fading in...');
         //   codeItem.fadeIn(fadeLength, function() {
