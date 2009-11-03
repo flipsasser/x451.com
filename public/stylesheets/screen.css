@@ -207,6 +207,10 @@ body {
   width:419px;
 }
 
+#zoom {
+  z-index:3;
+}
+
 #zoom p {
   font-size:9pt;
   font-weight:300;
