@@ -56,7 +56,7 @@ jQuery.cookie=function(name,value,options){if(typeof value!='undefined'){options
 
 var GitHubList = {
   initialized: false,
-  latestCommit: 0,
+  latestCommit: false,
   pull: function() {
     GitHubList.initialized = true;
     // TODO: Catch JSON parser errors - why doesn't jQuery offer something for this?
@@ -71,7 +71,8 @@ var GitHubList = {
     for (var i = 0; i < commits.length; i++) {
       var commit = commits[i];
       var code = $('#code');
-      if (commit.type == 'PushEvent' && this.latestCommit < commit.id) {
+      var date = Date.parse(commit.created_at);
+      if (commit.type == 'PushEvent' && commit.repository && (!this.latestCommit || this.latestCommit < date)) {
         // If it's a PushEvent, AND we haven't seen it before, add it to the list
         commitIndex += 1;
         var date = new Date(Date.parse(commit.created_at));
