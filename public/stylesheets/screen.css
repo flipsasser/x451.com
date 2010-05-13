@@ -21,6 +21,7 @@ body {
 
 #main {
   margin:100px auto;
+  position:relative;
   width:367px;
 }
 
@@ -53,7 +54,7 @@ body {
   background:url(/images/background-content.png) no-repeat;
   height:318px;
   position:relative;
-  z-index:1;
+/*  z-index:1;*/
 }
 
 #menu {
@@ -79,9 +80,11 @@ body {
   font:13pt bold 'Calibri', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height:32px;
   margin:0 auto;
+  position:relative;
   text-align:center;
   text-decoration:none;
   width:103px;
+  z-index:10;
 }
 
 #menu li a span.image {
@@ -197,6 +200,22 @@ body {
   width:100%;
 }
 
+#fork-me {
+  background:url(/images/background-fork-me.png) no-repeat;
+  cursor:pointer;
+  display:block;
+  height:141px;
+  left:230px;
+  position:absolute;
+  top:-13px;
+  width:141px;
+  z-index:2;
+}
+
+#fork-me span {
+  display:none;
+}
+
 #shadow {
   background:url(/images/background-shadow.png) no-repeat;
   height:87px;
@@ -208,7 +227,7 @@ body {
 }
 
 #zoom {
-  z-index:3;
+  z-index:10;
 }
 
 #zoom p {
