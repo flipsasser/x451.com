@@ -139,7 +139,7 @@ body {
 
 #code .commit {
   background:url(/images/background-commit.png) repeat-x;
-  cursor:default;
+  cursor:pointer;
   height:40px;
   overflow:hidden;
   padding:0 10px;
@@ -150,19 +150,8 @@ body {
   display:block;
   font:bold 13pt 'Calibri', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   float:left;
-  line-height:40px;
+  line-height:43px;
   text-decoration:none;
-}
-
-#code .commit .repository span {
-  line-height:25px;
-  padding:0 5px;
-}
-
-#code .commit .repository:hover span {
-  background-color:#aaa;
-  -moz-border-radius:10px;
-  -webkit-border-radius:10px;
 }
 
 #code .commit .date {
@@ -183,14 +172,31 @@ body {
   background:url(../images/background-code-description.gif);
   color:#fff;
   padding:10px;
-  -webkit-box-shadow:inset #000 0 2px 3px;
+  -moz-box-shadow:inset #000 0 0 3px;
+  -webkit-box-shadow:inset #000 0 0 3px;
+}
+
+#code .commit-description p {
+  font-size:14px;
+  font-weight:bold;
+  text-shadow:#000 0 1px 2px;
+}
+
+#code .commit-description .link {
+  background-color:rgba(0, 0, 0, 0.3);
+  display:inline-block;
+  padding:5px;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
 }
 
 #code code {
   display:block;
+  font:11pt 'consolas', 'Monaco', monospace;
   margin-bottom:10px;
+/*  overflow:auto;*/
   padding:0 10px;
-  white-space:pre;
+/*  white-space:pre;*/
 }
 
 #footer {
