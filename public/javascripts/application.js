@@ -31,6 +31,7 @@ $(function() {
       GitHubList.pull();
     }
   });
+
   $('#riley').fancyZoom({
     directory: '/images/zoom',
     height: 229,
@@ -41,7 +42,7 @@ $(function() {
   var one = 1;
   var googleTalk = $('a.google-talk');
   googleTalk.attr('href', 'gtalk:f' + 'l' + 'i' + 'p' + '@' + 'x' + four.toString() + five.toString() + one.toString() + '.' + 'c' + 'om');
-  $('.email.value').html([['fl' + 'i' + 'p', [['24', '0', 'blu', 'e'].join(''), 'c' + 'om'].join('.')].join('@'), googleTalk.attr('href').replace('gtalk:', '')].join('<br />'));
+  $('.email.value').html([['fl' + 'i' + 'p', [['int', 'rid', 'e', 'a'].join(''), 'c' + 'om'].join('.')].join('@'), googleTalk.attr('href').replace('gtalk:', '')].join('<br />'));
   var vcard = $('a.vcard')
   vcard.attr('href', ['Fl' + 'i' + 'p' + 'S' + 'ass' + 'e' + 'r' , 'cf'].join('.v'));
   vcard.click(function() {
@@ -66,30 +67,39 @@ var GitHubList = {
   },
   parseData: function(commits) {
     var commitIndex = 0;
-    commits = commits.reverse();
     var fadeLength = 500;
-    for (var i = 0; i < commits.length; i++) {
-      var commit = commits[i];
+    $.each(commits, function(i) {
       var code = $('#code');
-      var date = Date.parse(commit.created_at);
-      if (commit.type == 'PushEvent' && commit.repository && (!this.latestCommit || this.latestCommit < date)) {
+      var date = Date.parse(this.created_at);
+      if (this.type == 'PushEvent' && this.repository && (!GitHubList.latestCommit || GitHubList.latestCommit < date)) {
         // If it's a PushEvent, AND we haven't seen it before, add it to the list
         commitIndex += 1;
-        var date = new Date(Date.parse(commit.created_at));
-        var codeItem = $('<div class="commit"><a class="repository" href="' + commit.repository.url + '"><span>' + commit.repository.name + '</span></a><div class="date">' + (date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear()) + '</div><div class="message" title="' + commit.payload.shas[0][2] + '">' + commit.payload.shas[0][2] + '</div></div>');
-        codeItem.hide();//({opacity: 0});
-        code.prepend(codeItem);
-        codeItem.fadeIn(fadeLength);
-        // var timeoutFunction = function() {
-        //   console.log('fading in...');
-        //   codeItem.fadeIn(fadeLength, function() {
-        //     console.log('faded in');
-        //   });
-        // };
-        // setTimeout(timeoutFunction, commitIndex * fadeLength);
-        this.latestCommit = commit.id;
+        var date = new Date(Date.parse(this.created_at));
+        var codeItem = $('<div class="commit"><span class="repository">' + this.repository.name + '</span><div class="date">' + (date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear()) + '</div><div class="message" title="' + this.payload.shas[0][2] + '">' + this.payload.shas[0][2] + '</div></div>');
+        var codeDescription = $('<div class="commit-description"></div>');
+        if (this.repository.description != '') {
+          codeDescription.append('<p>' + this.repository.description + '</p>');
+        }
+        codeDescription.append('<p><a href="' + this.repository.url + '" target="_new">' + this.repository.url + '</a></p>');
+        code.append(codeItem.hide());
+        code.append(codeDescription.hide());
+        codeItem.click(function(event) {
+          event.preventDefault();
+          if (codeItem.hasClass('active')) {
+            codeItem.removeClass('active');
+            codeDescription.slideUp();
+          } else {
+            codeItem.addClass('active');
+            codeDescription.slideDown();
+          }
+        });
+        var timeoutFunction = function() {
+          codeItem.fadeIn(fadeLength);
+        };
+        setTimeout(timeoutFunction, commitIndex * (fadeLength / 5));
+        this.latestCommit = this.id;
       }
-    }
+    });
     // Pull again in 20 minutes
     setTimeout(GitHubList.pull, 1200000);
   }

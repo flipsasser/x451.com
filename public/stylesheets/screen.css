@@ -8,10 +8,6 @@ a:hover {
   text-decoration:underline;
 }
 
-a span.text {
-  visibility:hidden;
-}
-
 body {
   background:#022d4c url(/images/background-body.jpg) center 0 no-repeat;
   font:12px 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -28,17 +24,14 @@ body {
 #header {
   background:url(/images/background-header.png) no-repeat;
   height:90px;
-  position:relative;
-  z-index:2;
 }
 
 #banner {
-  background:url(/images/background-banner.png) 20px 20px no-repeat;
-  display:block;
-  height:52px;
+  display:inline-block;
   padding:20px;
+  position:relative;
   text-decoration:none;
-  width:225px;
+  z-index:2;
 }
 
 #arrow {
@@ -48,19 +41,21 @@ body {
   position:absolute;
   top:80px;
   width:24px;
+  z-index:2;
 }
 
 #content {
   background:url(/images/background-content.png) no-repeat;
   height:318px;
   position:relative;
-/*  z-index:1;*/
 }
 
 #menu {
   height:32px;
   margin:0 0 20px 0;
   padding:24px 10px 0 10px;
+  position:relative;
+  z-index:2;
 }
 
 #menu li {
@@ -84,7 +79,6 @@ body {
   text-align:center;
   text-decoration:none;
   width:103px;
-  z-index:10;
 }
 
 #menu li a span.image {
@@ -185,6 +179,13 @@ body {
   white-space: nowrap;
 }
 
+#code .commit-description {
+  background:url(../images/background-code-description.gif);
+  color:#fff;
+  padding:10px;
+  -webkit-box-shadow:inset #000 0 2px 3px;
+}
+
 #code code {
   display:block;
   margin-bottom:10px;
@@ -203,17 +204,22 @@ body {
 #fork-me {
   background:url(/images/background-fork-me.png) no-repeat;
   cursor:pointer;
-  display:block;
-  height:141px;
-  left:230px;
+  left:235px;
   position:absolute;
-  top:-13px;
-  width:141px;
-  z-index:2;
+  top:-18px;
+  z-index:1;
 }
 
-#fork-me span {
+#fork-me .hover {
   display:none;
+}
+
+#fork-me:hover .default {
+  display:none;
+}
+
+#fork-me:hover .hover {
+  display:inline-block;
 }
 
 #shadow {
@@ -245,7 +251,7 @@ body {
   float:right;
 }
 
-.column a {
+.column a.github, .column a.facebook, .column a.google-talk, .column a.linked-in, .column a.skype, .column a.twitter, .column a.vcard {
   background-image:url(/images/icons.png);
   background-position:7px 6px;
   background-repeat:no-repeat;
