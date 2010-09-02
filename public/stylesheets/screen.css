@@ -228,6 +228,10 @@ body {
   display:inline-block;
 }
 
+#fork-me:active .hover {
+	padding-top:1px;
+}
+
 #shadow {
   background:url(/images/background-shadow.png) no-repeat;
   height:87px;

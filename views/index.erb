@@ -24,11 +24,11 @@
     <div id="arrow"></div>
     <div id="content">
       <ul id="menu">
-        <li><a <%= 'class="active" ' if section == 'about' %>href="#about" id="about-button"><span class="image"></span><span class="text">About</span></a></li>
-        <li><a <%= 'class="active" ' if section == 'contact' %>href="#contact" id="contact-button"><span class="image"></span><span class="text">Contact</span></a></li>
-        <li><a <%= 'class="active" ' if section == 'code' %>href="#code" id="code-button"><span class="image"></span><span class="text">Code</span></a></li>
+        <li><a class="active" href="#about" id="about-button"><span class="image"></span><span class="text">About</span></a></li>
+        <li><a href="#contact" id="contact-button"><span class="image"></span><span class="text">Contact</span></a></li>
+        <li><a href="#code" id="code-button"><span class="image"></span><span class="text">Code</span></a></li>
       </ul>
-      <div id="about"<%= ' style="display:none;"' unless section == 'about' %>>
+      <div id="about">
         <p><b>Hi there!</b> My name is Flip Sasser. I&rsquo;m a programmer and sometimes-designer living in Baltimore, MD, USA.</p>
         <p>I build applications using Ruby, jQuery, and Objective-C. It's  basically the most fun ever.</p>
         <p>I also have a brown dog: <a href="#riley-dog" id="riley"></a></p>
@@ -37,7 +37,7 @@
           <p>We have a lot in common.</p>
         </div>
       </div>
-      <div id="contact"<%= ' style="display:none;"' unless section == 'contact' %>>
+      <div id="contact" style="display:none;">
         <div class="column">
           <p>
             <span class="label">E-mail</span>
@@ -60,11 +60,10 @@
           </p>
         </div>
       </div>
-      <div id="code"<%= ' style="display:none;"' unless section == 'code' %>>
-
-      </div>
+      <div id="code" style="display:none;"></div>
       <div id="footer">
         Copyright &copy; <%= year %> Flip Sasser. Most icons by <a href="http://paulrobertlloyd.com">Paul Robert Lloyd</a>.
+        <br />Looking for Sasser Interactive? <a href="/sasserinteractive">Tough</a>.
       </div>
     </div>
     <a href="http://github.com/flipsasser" id="fork-me">

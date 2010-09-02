@@ -1,2 +1,2 @@
 require 'x451'
-run Sinatra::Application
+run X451
