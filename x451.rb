@@ -15,6 +15,10 @@ class X451 < Sinatra::Application
     erb :index
   end
 
+  get '/hadi' do
+    erb :hadi
+  end
+
   get '/sasserinteractive' do
     erb :sasserinteractive
   end

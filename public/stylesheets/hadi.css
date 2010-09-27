@@ -1,0 +1,23 @@
+body, html {
+  height:100%;
+  margin:0;
+  padding:0;
+}
+
+body {
+  text-align:center;
+}
+
+#container {
+  height:100%;
+}
+
+h1 {
+  cursor:pointer;
+  font:70px 'Calibri', Helvetica, 'Helvetica Neue', sans-serif;
+  margin:-50px 0 0 0;
+  padding:0;
+  position:absolute;
+  top:50%;
+  width:100%;
+}
