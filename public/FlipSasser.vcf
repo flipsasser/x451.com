@@ -2,14 +2,11 @@ BEGIN:VCARD
 VERSION:3.0
 N:Sasser;Flip;;;
 FN:Flip Sasser
-ORG:240blue;
-EMAIL;type=INTERNET;type=WORK;type=pref:flip@240blue.com
-EMAIL;type=INTERNET;type=HOME:flip@x451.com
-TEL;type=WORK;type=pref:(410) 929-2701
+EMAIL;type=INTERNET;type=WORK;type=pref:flip@x451.com
+TEL;type=WORK;type=pref:410-317-0051
 item1.ADR;type=WORK;type=pref:;;P.O. Box 211;Riderwood;MD;21139;United States
 item1.X-ABADR:us
-X-JABBER;type=WORK;type=pref:flip@x451.com
 item2.X-ABRELATEDNAMES;type=pref:You!
 item2.X-ABLabel:_$!<Friend>!$_
-X-ABUID:D3D09916-0EF5-40E6-814D-9EE310F4FE1B\:ABPerson
+X-ABUID:0084189D-9ECF-407F-ABE9-0FE1DB0E96DC\:ABPerson
 END:VCARD
