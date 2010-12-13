@@ -214,26 +214,20 @@ body {
 #fork-me {
   background:url(/images/background-fork-me.png) no-repeat;
   cursor:pointer;
+  height:150px;
   left:235px;
   position:absolute;
   top:-18px;
+  width:150px;
   z-index:1;
 }
 
-#fork-me .hover {
-  display:none;
+#fork-me:hover {
+  background-position:-150px left;
 }
 
-#fork-me:hover .default {
-  display:none;
-}
-
-#fork-me:hover .hover {
-  display:inline-block;
-}
-
-#fork-me:active .hover {
-	padding-top:1px;
+#fork-me:active {
+	background-position:-299px left;
 }
 
 #shadow {
