@@ -136,9 +136,12 @@ body {
 }
 
 #code {
-  background:url(/images/background-code-loading.gif) center center no-repeat;
   height:200px;
   overflow:auto;
+}
+
+#code.loading {
+  background:url(/images/background-code-loading.gif) center center no-repeat;
 }
 
 #code .commit {

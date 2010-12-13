@@ -63,10 +63,10 @@ var GitHubList = {
 		});
 	},
 	parseData: function(commits) {
-		var commitIndex = 0;
-		var fadeLength = 500;
+	  var code = $('#code');
+	  code.addClass('loading');
+		var commitIndex = 0, fadeLength = 500;
 		$.each(commits, function(i) {
-			var code = $('#code');
 			var date = Date.parse(this.created_at);
 			if (this.type == 'PushEvent' && this.repository && (!GitHubList.latestCommit || GitHubList.latestCommit < date)) {
 				// If it's a PushEvent, AND we haven't seen it before, add it to the list
@@ -101,6 +101,7 @@ var GitHubList = {
 				this.latestCommit = this.id;
 			}
 		});
+		setTimeout(function() { code.removeClass('loading'); }, commitIndex * (fadeLength / 5));
 		// Pull again in 20 minutes
 		setTimeout(GitHubList.pull, 1200000);
 	}
