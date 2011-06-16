@@ -54,9 +54,7 @@ $(function() {
   $(window).bind('hashchange', function(event) {
     navigateToCurrent();
   });
-
 });
-
 
 var GitHubList = {
 	initialized: false,
