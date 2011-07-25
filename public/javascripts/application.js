@@ -34,7 +34,7 @@ $(function() {
 	var one = 1;
 	var googleTalk = $('a.google-talk');
 	googleTalk.attr('href', 'gtalk:f' + 'l' + 'i' + 'p' + '@' + 'x' + four.toString() + five.toString() + one.toString() + '.' + 'c' + 'om');
-	$('.email.value').html([['fl' + 'i' + 'p', [['int', 'rid', 'e', 'a'].join(''), 'c' + 'om'].join('.')].join('@'), googleTalk.attr('href').replace('gtalk:', '')].join('<br />'));
+	$('.email.value').html(googleTalk.attr('href').replace('gtalk:', ''));
 	var vcard = $('a.vcard')
 	vcard.attr('href', ['Fl' + 'i' + 'p' + 'S' + 'ass' + 'e' + 'r' , 'cf'].join('.v'));
 	vcard.click(function() {
