@@ -3,8 +3,10 @@
 <head>
   <title>Flip Sasser | x451.com</title>
   <link charset="utf-8" href="/stylesheets/screen.css" media="screen"  rel="stylesheet" type="text/css" title="no title" />
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
-  <!-- <script src="/javascripts/jquery.js" type="text/javascript"></script> -->
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
   <script src="/javascripts/application.js" type="text/javascript"></script>
   <meta name="description" content="Flip Sasser's personal homepage with a live git commit feed and some simple contact information. Also has pictures of a cute dog." />
   <meta name="keywords" content="flip sasser, flip, sasser, flipsasser" />
@@ -16,60 +18,62 @@
 </head>
 <body>
   <div id="main">
-    <div id="header">
-      <a href="/" id="banner"><img alt="Flip Sasser / Nerd" height="52" src="/images/banner.png" width="225" /></a>
-    </div>
-    <div id="arrow"></div>
-    <div id="content">
-      <ul id="menu">
-        <li><a class="active" href="#about" id="about-button" title="About"><span class="image"></span><span class="text">About</span></a></li>
-        <li><a href="#contact" id="contact-button" title="Contact"><span class="image"></span><span class="text">Contact</span></a></li>
-        <li><a href="#code" id="code-button" title="Code"><span class="image"></span><span class="text">Code</span></a></li>
+    <header>
+      <a href="/"><img alt="Flip Sasser / Nerd" height="52" src="/images/banner.png" width="225" /></a>
+    </header>
+    <!-- <a href="http://github.com/flipsasser" id="fork-me" title="Fork me on Github"></a> -->
+    <nav>
+      <ul>
+        <li><a class="active" href="#about" title="About">About</a></li>
+        <li><a href="#contact" id="contact-button" title="Contact">Contact</a></li>
+        <li><a href="#code" id="code-button" title="Code">Code</a></li>
       </ul>
-      <div id="content-body">
-        <div id="about">
+    </nav>
+    <article>
+      <div id="about">
+        <p>
+          <b>Howdy!</b>
+          My name is Flip Sasser. I&rsquo;m an entrepreneur, programmer, designer, and proud
+          <a href="http://www.babson.edu/" title="Class of 2012">Babson MBA</a>. My
+          <a href="http://www.facebook.com/profile.php?id=20200725" title= "Liz!">wife</a> and I live in Baltimore.
+        </p>
+        <p>
+          I work at <a href="http://www.figure53.com/">Figure 53</a>, and co-founded <a href="http://www.inthebackforty.com/">Back Forty</a>,
+          where we build applications that solve interesting problems with awesome technology.
+        </p>
+        <p>
+          It's  basically the most fun ever.
+        </p>
+      </div>
+      <div id="contact">
+        <div class="column">
           <p>
-            <b>Howdy!</b> My name is Flip Sasser. I&rsquo;m a programmer, designer, and <a href="http://www.babson.edu/" title="Class of 2012">Babson MBA</a>
-            candidate. I split my time between Boston and Baltimore.
-          </p>
-          <p>I build applications that solve interesting problems using Ruby, JavaScript, and Objective-C. It's  basically the most fun ever.</p>
-          <p>
-            I also have a <a href="http://www.facebook.com/profile.php?id=20200725" title= "Liz!">wife</a> who lives in Baltimore.
+            <span class="label">E-mail</span>
+            <span class="email value">#nospamkthxbai#</span>
+            <span class="label">Phone</span>
+            <span class="phone value">(410) 929-2701</span>
+            <span class="label">Address</span>
+            <span class="address value">P.O. Box 211<br />Riderwood, MD</span>
+            <a class="vcard" href="#">Download my vCard</a>
           </p>
         </div>
-        <div id="contact">
-          <div class="column">
-            <p>
-              <span class="label">E-mail</span>
-              <span class="email value">#nospamkthxbai#</span>
-              <span class="label">Phone</span>
-              <span class="phone value">(410) 929-2701</span>
-              <span class="label">Address</span>
-              <span class="address value">P.O. Box 211<br />Riderwood, MD</span>
-              <a class="vcard" href="#">Download my vCard</a>
-            </p>
-          </div>
-          <div class="column right">
-            <p>
-              <a class="github" href="http://github.com/flipsasser">Github</a>
-              <a class="linked-in" href="http://www.linkedin.com/in/flipsasser">LinkedIn</a>
-              <a class="facebook" href="http://www.facebook.com/flipsasser">Facebook</a>
-              <a class="google-talk" href="#">Google Talk</a>
-              <a class="skype" href="skype://flipsasser?chat">Skype</a>
-              <a class="twitter" href="http://twitter.com/flipsasser">Follow me on twitter</a>
-            </p>
-          </div>
+        <div class="column right">
+          <p>
+            <a class="github" href="http://github.com/flipsasser">Github</a>
+            <a class="linked-in" href="http://www.linkedin.com/in/flipsasser">LinkedIn</a>
+            <a class="facebook" href="http://www.facebook.com/flipsasser">Facebook</a>
+            <a class="google-talk" href="#">Google Talk</a>
+            <a class="skype" href="skype://flipsasser?chat">Skype</a>
+            <a class="twitter" href="http://twitter.com/flipsasser">Follow me on twitter</a>
+          </p>
         </div>
-        <div id="code"></div>
       </div>
-      <div id="footer">
-        Copyright &copy; <%= year %> Flip Sasser. Contact icons by <a href="http://paulrobertlloyd.com" title="A nice British guy">Paul Robert Lloyd</a>.
-        <br />Looking for Sasser Interactive? <a href="/sasserinteractive" title="My Old Company">Tough</a>.
-      </div>
-    </div>
-    <a href="http://github.com/flipsasser" id="fork-me" title="Fork me on Github"></a>
+      <div id="code"></div>
+    </article>
+    <footer>
+      Copyright &copy; <%= year %> Flip Sasser. Contact icons by <a href="http://paulrobertlloyd.com" title="A nice British guy">Paul Robert Lloyd</a>.
+    </footer>
   </div>
-  <div id="shadow"></div>
   <script type="text/javascript">
   /*<![CDATA[*/
   var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

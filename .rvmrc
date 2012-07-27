@@ -1,1 +1,1 @@
-rvm use ree
+rvm use 1.9.3@x451 --create
